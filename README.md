@@ -15,3 +15,17 @@ Create a class called **Card** and **CardDeck** which would represent a real dec
 - You can get the size of the deck (the number of cards in the deck)
 
 Make sure all the tests are passing.
+
+### Running Tests
+
+
+```bash
+bundle install 
+```
+
+Then after rspec is installed, run the following command from the root folder of the project.
+
+```bash
+rspec spec
+```
+

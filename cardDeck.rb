@@ -1,39 +1,53 @@
 class Card
 
-  # complete
+  attr_accessor :suit, :rank
 
-  def initialize
-    # complete
+  def initialize(suit, rank)
+    @suit = suit
+    @rank = rank
   end
 
   def to_s
-    # complete
+    [@rank, @suit]
   end
 
 end
-
 
 class CardDeck
   attr_accessor :cards # cards is a list of Card objects
 
   def initialize
-    # complete
+    @cards = []
+    initializeDeck
   end
 
+  def initializeDeck
+    suits = ['H', 'S', 'D', 'T']
+    ranks = 1..13
+
+    ranks.each do |r|
+      suits.each do |s|
+        @cards << Card.new(s,r)
+      end
+    end
+  end
+
+  private :initializeDeck
+
   def shuffle
-    # complete
+    @cards.shuffle!
   end
 
   def peek
-    # complete
+    @cards.first
   end
 
   def deal  #removes first element and returns it.
-    # complete
+    @cards.shift
   end
 
   def size
-    # complete
+    @cards.size
   end
 
   def to_s
@@ -44,3 +58,11 @@ class CardDeck
 
 end
 
+
+deck = CardDeck.new
+deck.shuffle
+p deck.to_s
+p deck.peek.to_s
+p deck.deal.to_s
+p deck.to_s
+p deck.size

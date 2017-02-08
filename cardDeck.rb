@@ -2,8 +2,10 @@ class Card
 
   # complete
 
-  def initialize
+  def initialize(rank, suit)
     # complete
+    @rank = rank
+    @suit = suit
   end
 
   def to_s

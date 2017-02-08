@@ -37,9 +37,9 @@ describe CardDeck do
 
   describe "#shuffle" do
     it "should shuffle the deck" do
-      olddeck = @deck.clone
+      olddeckcards = @deck.cards.clone
       @deck.shuffle
-      expect(olddeck).not_to eq(@deck)
+      expect(olddeckcards).not_to eq(@deck.cards)
     end
   end
 end
